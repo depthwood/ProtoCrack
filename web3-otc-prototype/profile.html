@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>我的 · NX OTC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-tab="me" data-boot="profile">
+  <div class="app">
+    <header class="shell-header">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="avatar" style="width:48px;height:48px;font-size:16px;">用</div>
+        <div>
+          <h1 class="app-name" style="font-size:1.1rem;">演示用户</h1>
+          <div class="region">已认证 · L2</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="card">
+      <h2 style="margin:0 0 8px;font-size:0.95rem;">交易币种偏好</h2>
+      <p class="muted" style="font-size:13px;margin:0 0 12px;">法币为 OTC 计价币种，加密资产为交易标的。大厅与询价会按此组合展示（演示）。</p>
+      <div class="field">
+        <label for="pref-fiat">法币</label>
+        <select id="pref-fiat" aria-label="法币币种"></select>
+      </div>
+      <div class="field">
+        <label for="pref-coin">加密资产</label>
+        <select id="pref-coin" aria-label="加密币种"></select>
+      </div>
+    </div>
+
+    <nav class="menu-list" aria-label="功能入口">
+      <a href="ai.html">智能助手 <span class="chev">›</span></a>
+      <a href="safety.html">账户与交易安全 <span class="chev">›</span></a>
+      <a href="orders.html">我的订单 <span class="chev">›</span></a>
+      <a href="dispute.html">申诉与客服 <span class="chev">›</span></a>
+    </nav>
+
+    <p class="legal-strip" style="margin-top:20px;">客服入口为原型跳转；实际产品将接入工单/在线客服。</p>
+  </div>
+
+  <nav class="bottom-tabs" aria-label="底部导航">
+    <a href="index.html" data-tab="home">首页</a>
+    <a href="quotes.html" data-tab="trade">交易</a>
+    <a href="orders.html" data-tab="orders">订单</a>
+    <a href="profile.html" data-tab="me">我的</a>
+  </nav>
+    <script src="assets/js/currency.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/ai-intent.js"></script>
+  <script src="assets/js/ai-hints.js"></script>
+  <script src="assets/js/otc-ui.js"></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>交易完成 · NX OTC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="flow-only" data-boot="release">
+  <div class="app flow-only">
+    <header class="sub-top">
+      <a class="back" href="orders.html" aria-label="返回">←</a>
+      <h1 class="sub-title">已完成</h1>
+      <span class="sub-placeholder"></span>
+    </header>
+
+    <div class="card" style="text-align:center;">
+      <div style="font-size:48px;line-height:1;margin-bottom:8px;" aria-hidden="true">✓</div>
+      <h2 style="margin:0 0 6px;">USDT 已入账</h2>
+      <p class="muted">演示数据已写入本机，可在「订单」查看记录。</p>
+      <p class="small mono" id="rel-order" style="margin-top:10px;">—</p>
+      <div class="mono" style="margin-top:12px;font-size:13px;">链上凭证 <span style="color:var(--accent);" id="rel-tx">0x4a…c91f</span></div>
+      <div class="row-actions" style="justify-content:center;margin-top:16px;">
+        <button type="button" class="btn btn-outline" id="btn-copy-tx">复制哈希</button>
+      </div>
+    </div>
+
+    <div class="row-actions stack">
+      <a class="btn btn-primary btn-block" href="index.html">返回首页</a>
+      <a class="btn btn-ghost btn-block" href="ai.html" id="rel-ask-ai">问助手接下来怎么管理资金</a>
+    </div>
+  </div>
+    <script src="assets/js/currency.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/ai-intent.js"></script>
+  <script src="assets/js/ai-hints.js"></script>
+  <script src="assets/js/otc-ui.js"></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

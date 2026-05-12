@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>首页 · NX OTC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-tab="home" data-boot="home">
+  <div class="app">
+    <header class="shell-header">
+      <div>
+        <h1 class="app-name">NX OTC</h1>
+        <div class="region" data-shell-fiat>法币 · CNY（示意）</div>
+      </div>
+      <a href="profile.html" class="avatar" title="我的">NX</a>
+    </header>
+
+    <section class="balance-strip" aria-label="参考资产">
+      <div class="label" id="home-balance-label">参考余额（USDT）</div>
+      <div class="amount mono">13,820.00</div>
+      <div class="fiat" id="home-fiat-est">约合 ¥ 100,092 · 仅供参考</div>
+    </section>
+
+    <section class="quick-start" aria-label="快速开始">
+      <div class="quick-start-head">
+        <span class="quick-start-badge">推荐</span>
+        <h2 class="quick-start-title">快速开始</h2>
+      </div>
+      <p class="quick-start-desc">
+        第一次用？和 <strong>NX 助手</strong> 聊一句，按步骤带你看询价、选商、订单与付款（演示）。全程只在站内页面操作。
+      </p>
+      <a
+        class="btn btn-primary btn-block quick-start-cta"
+        href="ai.html?q=%E7%94%A8%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%B8%A6%E6%88%91%E8%B5%B0%E5%AE%8C%E4%B8%80%E7%AC%94%20OTC%20%E4%BA%A4%E6%98%93%E6%9C%89%E5%93%AA%E4%BA%9B%E6%AD%A5%E9%AA%A4"
+      >
+        用 AI 走一遍 OTC 流程
+      </a>
+      <div class="quick-start-links">
+        <a href="rfq.html">先询价 RFQ</a>
+        <span class="quick-start-dot" aria-hidden="true">·</span>
+        <a href="quotes.html">直接逛大厅</a>
+      </div>
+    </section>
+
+    <div class="quick-grid">
+      <a class="big-action buy" href="quotes.html?side=buy">
+        <strong>买入 USDT</strong>
+        <span>人民币付款，商家放币</span>
+      </a>
+      <a class="big-action sell" href="quotes.html?side=sell">
+        <strong>卖出 USDT</strong>
+        <span>兑换人民币到账银行卡</span>
+      </a>
+    </div>
+
+    <div class="section-title">
+      <span>最近订单</span>
+      <a href="orders.html">查看全部</a>
+    </div>
+
+    <div id="home-order-slot"></div>
+
+    <footer class="foot-note">原型仅为交互示意，不代表真实报价与可用性。</footer>
+  </div>
+
+  <nav class="bottom-tabs" aria-label="底部导航">
+    <a href="index.html" data-tab="home">首页</a>
+    <a href="quotes.html" data-tab="trade">交易</a>
+    <a href="orders.html" data-tab="orders">订单</a>
+    <a href="profile.html" data-tab="me">我的</a>
+  </nav>
+  <script src="assets/js/currency.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/ai-intent.js"></script>
+  <script src="assets/js/ai-hints.js"></script>
+  <script src="assets/js/otc-ui.js"></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

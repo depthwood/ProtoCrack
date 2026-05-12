@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>智能助手 · NX OTC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="flow-only" data-boot="ai">
+  <div class="app flow-only">
+    <header class="sub-top">
+      <a class="back" href="profile.html" aria-label="返回">←</a>
+      <h1 class="sub-title">NX 助手</h1>
+      <span class="sub-placeholder"></span>
+    </header>
+
+    <p class="muted" style="margin:0 0 10px;font-size:12px;">会话会保存在本机（IndexedDB 演示），方便连续追问与订单联动。</p>
+
+    <section class="nl-flow" aria-label="自然语言 OTC 全流程">
+      <h2>自然语言 → 完整 OTC 流程（演示）</h2>
+      <ol>
+        <li><a href="rfq.html">询价 RFQ</a>：聚合多档报价、QuoteRef 与 TTL（模拟）。</li>
+        <li><a href="quotes.html">交易大厅</a>：选商并创建订单；大额以订单页为准。</li>
+        <li>订单内：<strong>托管签名 → 付款 → 放币</strong>；付款、申诉等关键动作为站内 + 二次确认。</li>
+        <li>异常：<a href="dispute.html">申诉向导</a>（选单 → 填因 → 勾选确认提交）。</li>
+      </ol>
+    </section>
+
+    <div id="ai-thread" class="chat" style="max-height:min(52vh,420px);"></div>
+
+    <div class="ai-suggest" aria-label="快捷说法">
+      <button type="button" class="chip" data-ai-suggest data-text="我想发起询价并看多档做市报价和 QuoteRef">询价 · 报价</button>
+      <button type="button" class="chip" data-ai-suggest data-text="用自然语言带我走完一笔 OTC 交易有哪些步骤">全流程</button>
+      <button type="button" class="chip" data-ai-suggest data-text="我要用 10 万以内人民币尽快买 USDT">买入 · 示例</button>
+      <button type="button" class="chip" data-ai-suggest data-text="帮我看看订单进度">查进度</button>
+      <button type="button" class="chip" data-ai-suggest data-text="我准备付款了，要注意什么">付款核对</button>
+      <button type="button" class="chip" data-ai-suggest data-text="我要对已付款订单发起平台申诉">发起申诉</button>
+      <button type="button" class="chip" data-ai-suggest data-text="对方让我换银行卡是不是诈骗">防骗</button>
+    </div>
+
+    <div class="ai-input-row">
+      <input id="ai-input" type="text" maxlength="500" autocomplete="off" placeholder="用一句话描述你的目标，例如：查单、买币、申诉…" />
+      <button type="button" class="btn btn-primary" id="btn-ai-send">发送</button>
+    </div>
+
+    <button type="button" class="btn btn-outline btn-block" id="btn-ai-clear" style="margin-top:10px;">清空对话记录</button>
+
+    <a href="safety.html" class="small muted" style="display:block;text-align:center;margin-top:12px;">安全与助手说明</a>
+  </div>
+    <script src="assets/js/currency.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/ai-intent.js"></script>
+  <script src="assets/js/ai-hints.js"></script>
+  <script src="assets/js/otc-ui.js"></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

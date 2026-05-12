@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>付款 · NX OTC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="flow-only" data-boot="pay">
+  <div class="app flow-only">
+    <header class="sub-top">
+      <a class="back" id="pay-back" href="order-detail.html" aria-label="返回">←</a>
+      <h1 class="sub-title">付款信息</h1>
+      <span class="sub-placeholder"></span>
+    </header>
+
+    <div class="card">
+      <p class="small muted" style="margin:0 0 10px;">关联订单：<span class="mono" id="pay-order-ref">—</span></p>
+      <table class="data">
+        <tbody>
+          <tr><th>户名</th><td>张*海</td></tr>
+          <tr><th>银行卡</th><td class="mono">6222 **** **** 8810</td></tr>
+          <tr><th>应付金额</th><td class="mono" id="pay-amount">¥ —</td></tr>
+          <tr><th>附言/备注</th><td class="mono small">务必填写订单后六位</td></tr>
+        </tbody>
+      </table>
+
+      <div class="hint-box" style="margin-top:14px;">
+        <strong>安全提示</strong>
+        <p class="small" style="margin:6px 0 0;color:rgba(254,243,199,0.92);">只认本页展示信息；与对方聊天中发送的账户不一致时，先停下并在助手/客服里反馈。</p>
+      </div>
+
+      <label class="field" style="display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:14px;cursor:pointer;">
+        <input type="checkbox" id="pay-ack" style="width:auto;margin-top:3px;" />
+        <span>我确认按本页展示的账户与金额转账</span>
+      </label>
+
+      <div class="row-actions stack">
+        <button type="button" class="btn btn-primary btn-block" id="btn-pay-submit">我已付款，提交凭证</button>
+        <a class="btn btn-outline btn-block" id="pay-later" href="order-detail.html">稍后再付</a>
+      </div>
+    </div>
+
+    <div class="card" style="border-color:rgba(167,139,250,0.35);">
+      <div class="muted small">助手</div>
+      <p style="margin:8px 0 0;font-size:13px;">你可以问我：「如何核对附言」「付款超时怎么办」「怎么判断是否诈骗」。</p>
+      <div class="row-actions" style="margin-top:10px;">
+        <a class="btn btn-outline" href="ai.html?q=" id="pay-ask-ai">向助手提问</a>
+      </div>
+    </div>
+  </div>
+    <script src="assets/js/currency.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/confirm.js"></script>
+  <script src="assets/js/ai-intent.js"></script>
+  <script src="assets/js/ai-hints.js"></script>
+  <script src="assets/js/otc-ui.js"></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

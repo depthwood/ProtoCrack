@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>申诉 · NX OTC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="flow-only" data-boot="dispute">
+  <div class="app flow-only">
+    <header class="sub-top">
+      <a class="back" id="dis-back" href="orders.html" aria-label="返回">←</a>
+      <h1 class="sub-title">申诉</h1>
+      <span class="sub-placeholder"></span>
+    </header>
+
+    <div class="step-bar" role="navigation" aria-label="申诉步骤">
+      <div class="step-dot on" data-si="1">① 选订单</div>
+      <div class="step-dot on" data-si="2">② 填原因</div>
+      <div class="step-dot on" data-si="3">③ 确认提交</div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 10px;font-size:0.9rem;">第 1 步 · 选择订单</h2>
+      <label class="field" for="dis-order">关联订单</label>
+      <select id="dis-order">
+        <option value="">正在加载本机订单…</option>
+      </select>
+      <p class="legal-strip" style="margin-top:12px;">仅可选择未完结或未在仲裁中的订单（演示过滤）。</p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 10px;font-size:0.9rem;">第 2 步 · 问题类型与说明</h2>
+      <div class="field">
+        <label for="dis-why">类型</label>
+        <select id="dis-why">
+          <option value="paid_no_coin">我已付款，对方未确认/未放币</option>
+          <option value="amount_mismatch">金额/备注不一致</option>
+          <option value="other">其他</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="dis-note">补充说明</label>
+        <textarea id="dis-note" rows="3" placeholder="建议填写：转账时间、流水后六位、与对方沟通摘要（演示）"></textarea>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 10px;font-size:0.9rem;">第 3 步 · 预览</h2>
+      <div id="dis-preview" class="muted" style="font-size:13px;line-height:1.6;">请选择订单并填写说明后，点击下方按钮将打开<strong>最终确认</strong>（需勾选）。</div>
+      <div class="row-actions stack" style="margin-top:14px;">
+        <button type="button" class="btn btn-danger-outline btn-block" id="btn-dis-final">确认发起申诉</button>
+        <a class="btn btn-outline btn-block" id="dis-to-order" href="orders.html">返回订单列表</a>
+      </div>
+    </div>
+  </div>
+    <script src="assets/js/currency.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/confirm.js"></script>
+  <script src="assets/js/ai-intent.js"></script>
+  <script src="assets/js/ai-hints.js"></script>
+  <script src="assets/js/otc-ui.js"></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

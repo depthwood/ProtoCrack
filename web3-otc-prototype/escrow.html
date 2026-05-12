@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>托管锁定 · NX OTC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="flow-only" data-boot="escrow">
+  <div class="app flow-only">
+    <header class="sub-top">
+      <a class="back" id="esc-back" href="order-create.html" aria-label="返回">←</a>
+      <h1 class="sub-title">托管</h1>
+      <span class="sub-placeholder"></span>
+    </header>
+
+    <div class="card">
+      <p class="muted">订单 <span class="mono" id="esc-order">—</span></p>
+      <p class="muted">请在钱包里核对授权金额与合约地址；完成后进入付款页。</p>
+      <table class="data">
+        <tbody>
+          <tr><th>合约</th><td class="mono small">0x71…9Ae2 已校验</td></tr>
+          <tr><th>锁定（示意）</th><td class="mono">与订单一致</td></tr>
+        </tbody>
+      </table>
+      <div class="row-actions stack">
+        <button type="button" class="btn btn-primary btn-block" id="btn-wallet">连接钱包并签名</button>
+        <a class="btn btn-outline btn-block" id="esc-to-pay" href="pay.html">我已完成签名，去付款</a>
+      </div>
+    </div>
+  </div>
+    <script src="assets/js/currency.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/ai-intent.js"></script>
+  <script src="assets/js/ai-hints.js"></script>
+  <script src="assets/js/otc-ui.js"></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

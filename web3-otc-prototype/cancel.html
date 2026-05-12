@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>取消与超时 · NX OTC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="flow-only">
+  <div class="app flow-only">
+    <header class="sub-top">
+      <a class="back" href="order-detail.html" aria-label="返回">←</a>
+      <h1 class="sub-title">取消与超时</h1>
+      <span class="sub-placeholder"></span>
+    </header>
+
+    <div class="card">
+      <p class="muted">未进入托管前通常可直接取消；进入托管后将以页面规则与订单状态为准。</p>
+      <table class="data">
+        <tbody>
+          <tr><th>报价锁价</th><td>约 90 秒</td></tr>
+          <tr><th>付款倒计时</th><td>常见 15–30 分钟</td></tr>
+        </tbody>
+      </table>
+      <div class="row-actions stack" style="margin-top:16px;">
+        <button type="button" class="btn btn-danger-outline btn-block">申请取消（按规则校验）</button>
+      </div>
+    </div>
+  </div>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

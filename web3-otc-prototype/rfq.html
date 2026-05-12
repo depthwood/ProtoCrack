@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>询价 RFQ · NX OTC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="flow-only" data-boot="rfq">
+  <div class="app flow-only">
+    <header class="sub-top">
+      <a class="back" href="index.html" aria-label="返回">←</a>
+      <h1 class="sub-title">询价（RFQ）</h1>
+      <span class="sub-placeholder"></span>
+    </header>
+
+    <div class="card">
+      <p class="muted" style="margin:0 0 14px;font-size:13px;">
+        提交需求后，引擎会向多名做市方请求 <strong>匿名报价</strong>，并生成 <span class="mono">QuoteRef</span> 与倒计时；你可在下方比对后再去大厅锁单。
+      </p>
+      <div class="field">
+        <label for="amt">名义金额（CNY）</label>
+        <input id="amt" type="text" inputmode="decimal" placeholder="例如 100000" value="100000" />
+      </div>
+      <div class="field">
+        <label for="payway">付款通道偏好</label>
+        <select id="payway">
+          <option>银行卡实时转账</option>
+          <option>支付宝（若支持）</option>
+          <option>微信支付（若支持）</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="rfq-side">方向</label>
+        <select id="rfq-side">
+          <option value="buy">买入 USDT</option>
+          <option value="sell">卖出 USDT</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-primary btn-block" id="btn-rfq-fetch">发起询价并拉取报价</button>
+    </div>
+
+    <div id="rfq-quote-panel" class="card hidden" aria-live="polite">
+      <h2 style="margin:0 0 8px;font-size:0.95rem;">报价响应</h2>
+      <p class="muted small mono" id="rfq-meta" style="margin:0 0 12px;"></p>
+      <p class="muted" style="font-size:12px;margin:0 0 10px;">以下为演示返回的 <strong>多档报价</strong>，优先生效最低价（买）/ 最高收购（卖）。</p>
+      <div id="rfq-quote-inner" class="quote-grid"></div>
+      <div class="row-actions stack" style="margin-top:16px;">
+        <a class="btn btn-primary btn-block" id="btn-rfq-to-hall" href="quotes.html">带上结果去交易大厅</a>
+        <a class="btn btn-outline btn-block" href="ai.html?q=" id="btn-rfq-ask-ai">让助手解释这些报价</a>
+      </div>
+    </div>
+  </div>
+    <script src="assets/js/currency.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/confirm.js"></script>
+  <script src="assets/js/ai-intent.js"></script>
+  <script src="assets/js/ai-hints.js"></script>
+  <script src="assets/js/otc-ui.js"></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
