@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0f1a" id="meta-theme-color" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("saiwu-theme");
+        if (t === "light" || t === "dark") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <title>人员队伍 · 赛务通</title>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body>
+  <header class="app-header">
+    <a class="app-brand" href="index.html">
+      <span class="app-brand-icon" aria-hidden="true">◈</span>
+      <span>赛务通</span>
+    </a>
+    <div class="app-header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换浅色/深色模式" title="外观">☀</button>
+      <span class="badge-live" id="clock-now" aria-live="polite">--:--:--</span>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">人员与队伍</h1>
+    <p class="page-sub">参赛单位 · 可联动检录状态</p>
+
+    <section class="card">
+      <h2 class="card-title">搜索</h2>
+      <div class="form-group">
+        <label for="q-name">姓名 / 号码</label>
+        <input id="q-name" type="search" name="q" placeholder="例如：08 号 或 李某某" autocomplete="off" />
+      </div>
+      <a class="btn btn-ghost btn-block" href="checkin.html">跳转到检录页扫码</a>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">代表队（节选）</h2>
+      <ul class="list">
+        <li class="list-item">
+          <div>
+            <strong>滨海大学</strong>
+            <div class="list-meta">运动员 48 · 已检录 44</div>
+          </div>
+          <a class="btn btn-ghost" href="checkin.html" style="padding: 6px 12px; font-size: 0.8rem">检录</a>
+        </li>
+        <li class="list-item">
+          <div>
+            <strong>江城体院</strong>
+            <div class="list-meta">运动员 52 · 已检录 51</div>
+          </div>
+          <a class="btn btn-ghost" href="checkin.html" style="padding: 6px 12px; font-size: 0.8rem">检录</a>
+        </li>
+        <li class="list-item">
+          <div>
+            <strong>南山中学联队</strong>
+            <div class="list-meta">运动员 36 · 已检录 30</div>
+          </div>
+          <a class="btn btn-ghost" href="checkin.html" style="padding: 6px 12px; font-size: 0.8rem">检录</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">本组道次（男子 100m 预赛 3 组）</h2>
+      <ul class="list">
+        <li class="list-item">
+          <div>
+            <strong>1 道</strong>
+            <div class="list-meta">08 号 · 滨海大学 · 张某某</div>
+          </div>
+          <span class="tag tag-done">已检录</span>
+        </li>
+        <li class="list-item">
+          <div>
+            <strong>2 道</strong>
+            <div class="list-meta">15 号 · 江城体院 · 王某某</div>
+          </div>
+          <span class="tag tag-done">已检录</span>
+        </li>
+        <li class="list-item">
+          <div>
+            <strong>3 道</strong>
+            <div class="list-meta">22 号 · 南山中学 · 李某某</div>
+          </div>
+          <span class="tag tag-pending">未到</span>
+        </li>
+        <li class="list-item">
+          <div>
+            <strong>4 道</strong>
+            <div class="list-meta">— 空道 —</div>
+          </div>
+          <span class="tag tag-pending">补录</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <nav class="app-tabbar" aria-label="主导航">
+    <a class="tab-link" href="index.html">
+      <span class="tab-icon" aria-hidden="true">⌂</span>
+      首页
+    </a>
+    <a class="tab-link" href="schedule.html">
+      <span class="tab-icon" aria-hidden="true">▤</span>
+      赛程
+    </a>
+    <a class="tab-link" href="checkin.html">
+      <span class="tab-icon" aria-hidden="true">☑</span>
+      检录
+    </a>
+    <a class="tab-link" href="live.html">
+      <span class="tab-icon" aria-hidden="true">◎</span>
+      现场
+    </a>
+    <a class="tab-link" href="settings.html">
+      <span class="tab-icon" aria-hidden="true">◆</span>
+      设置
+    </a>
+  </nav>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>

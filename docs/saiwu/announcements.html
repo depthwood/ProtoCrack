@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0f1a" id="meta-theme-color" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("saiwu-theme");
+        if (t === "light" || t === "dark") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <title>赛事公告 · 赛务通</title>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body>
+  <header class="app-header">
+    <a class="app-brand" href="index.html">
+      <span class="app-brand-icon" aria-hidden="true">◈</span>
+      <span>赛务通</span>
+    </a>
+    <div class="app-header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换浅色/深色模式" title="外观">☀</button>
+      <span class="badge-live" id="clock-now" aria-live="polite">--:--:--</span>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">赛事公告</h1>
+    <p class="page-sub">组委会发布 · 按日期归档（演示数据）</p>
+
+    <section class="card">
+      <h2 class="card-title">置顶</h2>
+      <ul class="announce-list">
+        <li class="announce-item announce-item--important">
+          <time class="announce-date" datetime="2026-05-12">05-12</time>
+          <div>
+            <strong>重要 · 午后雷雨预案生效</strong>
+            <p>若雷暴黄色预警发布，径赛将暂停 30 分钟；恢复时间以现场广播与 APP 推送为准。</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">全部</h2>
+      <ul class="announce-list">
+        <li class="announce-item">
+          <time class="announce-date" datetime="2026-05-11">05-11</time>
+          <div>
+            <strong>场地变更 · 跳远资格赛</strong>
+            <p>沙坑维护已完成，场次仍在北侧助跑道；热身改至副场 3 道。</p>
+          </div>
+        </li>
+        <li class="announce-item">
+          <time class="announce-date" datetime="2026-05-10">05-10</time>
+          <div>
+            <strong>医疗服务</strong>
+            <p>西南出口医务站全天开放；各代表队可领取防暑与急救联络卡。</p>
+          </div>
+        </li>
+        <li class="announce-item">
+          <time class="announce-date" datetime="2026-05-09">05-09</time>
+          <div>
+            <strong>停车与交通</strong>
+            <p>社会车辆请停 P2/P3；大巴临时停靠东广场即停即走。</p>
+          </div>
+        </li>
+        <li class="announce-item">
+          <time class="announce-date" datetime="2026-05-08">05-08</time>
+          <div>
+            <strong>反兴奋剂教育</strong>
+            <p>全体注册运动员须在报到台完成线上学习签到（二维码见背板）。</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <a class="btn btn-ghost btn-block" href="index.html" style="margin-top: 8px">返回工作台</a>
+  </main>
+
+  <nav class="app-tabbar" aria-label="主导航">
+    <a class="tab-link" href="index.html">
+      <span class="tab-icon" aria-hidden="true">⌂</span>
+      首页
+    </a>
+    <a class="tab-link" href="schedule.html">
+      <span class="tab-icon" aria-hidden="true">▤</span>
+      赛程
+    </a>
+    <a class="tab-link" href="checkin.html">
+      <span class="tab-icon" aria-hidden="true">☑</span>
+      检录
+    </a>
+    <a class="tab-link" href="live.html">
+      <span class="tab-icon" aria-hidden="true">◎</span>
+      现场
+    </a>
+    <a class="tab-link" href="settings.html">
+      <span class="tab-icon" aria-hidden="true">◆</span>
+      设置
+    </a>
+  </nav>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0f1a" id="meta-theme-color" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("saiwu-theme");
+        if (t === "light" || t === "dark") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <title>赛程场地 · 赛务通</title>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body>
+  <header class="app-header">
+    <a class="app-brand" href="index.html">
+      <span class="app-brand-icon" aria-hidden="true">◈</span>
+      <span>赛务通</span>
+    </a>
+    <div class="app-header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换浅色/深色模式" title="外观">☀</button>
+      <span class="badge-live" id="clock-now" aria-live="polite">--:--:--</span>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">赛程与场地</h1>
+    <p class="page-sub">按时间排序 · 可跳转检录与现场</p>
+
+    <section class="card" id="next">
+      <h2 class="card-title">即将开始</h2>
+      <ul class="list">
+        <li class="list-item">
+          <div>
+            <strong>男子 100m 预赛 · 第 3 组</strong>
+            <div class="list-meta">14:35 · 一号跑道 · 检录口 A</div>
+          </div>
+          <span class="tag tag-ongoing">即将</span>
+        </li>
+      </ul>
+      <div class="row-actions">
+        <a class="btn btn-primary" href="checkin.html">去检录</a>
+        <a class="btn btn-ghost" href="live.html">现场屏</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">上午场</h2>
+      <ul class="list">
+        <li class="list-item">
+          <div>
+            <strong>女子 400m 预赛 · 第 1 组</strong>
+            <div class="list-meta">09:10 · 田径场 · 已完成</div>
+          </div>
+          <span class="tag tag-done">结束</span>
+        </li>
+        <li class="list-item">
+          <div>
+            <strong>铅球 · 女子资格赛</strong>
+            <div class="list-meta">09:40 · 投掷区 · 已完成</div>
+          </div>
+          <span class="tag tag-done">结束</span>
+        </li>
+        <li class="list-item">
+          <div>
+            <strong>男子跳高 资格赛</strong>
+            <div class="list-meta">10:20 · 跳高区</div>
+          </div>
+          <span class="tag tag-done">结束</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">下午场</h2>
+      <ul class="list">
+        <li class="list-item">
+          <div>
+            <strong>混合接力 4×100m 演示</strong>
+            <div class="list-meta">13:00 · 主直道</div>
+          </div>
+          <span class="tag tag-done">结束</span>
+        </li>
+        <li class="list-item">
+          <div>
+            <strong>男子 100m 预赛 · 第 3 组</strong>
+            <div class="list-meta">14:35 · 一号跑道</div>
+          </div>
+          <span class="tag tag-pending">待发</span>
+        </li>
+        <li class="list-item">
+          <div>
+            <strong>女子 100m 决赛</strong>
+            <div class="list-meta">16:10 · 一号跑道</div>
+          </div>
+          <span class="tag tag-pending">待发</span>
+        </li>
+      </ul>
+      <p class="empty-hint">原型数据仅供演示 · 接入后端后可拉取实时赛程</p>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">场地占用</h2>
+      <ul class="list">
+        <li class="list-item">
+          <div>
+            <strong>主体育场</strong>
+            <div class="list-meta">径赛、颁奖台</div>
+          </div>
+          <span class="tag tag-ongoing">使用中</span>
+        </li>
+        <li class="list-item">
+          <div>
+            <strong>副场训练道</strong>
+            <div class="list-meta">热身、机动</div>
+          </div>
+          <span class="tag tag-ongoing">开放</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <nav class="app-tabbar" aria-label="主导航">
+    <a class="tab-link" href="index.html">
+      <span class="tab-icon" aria-hidden="true">⌂</span>
+      首页
+    </a>
+    <a class="tab-link" href="schedule.html" aria-current="page">
+      <span class="tab-icon" aria-hidden="true">▤</span>
+      赛程
+    </a>
+    <a class="tab-link" href="checkin.html">
+      <span class="tab-icon" aria-hidden="true">☑</span>
+      检录
+    </a>
+    <a class="tab-link" href="live.html">
+      <span class="tab-icon" aria-hidden="true">◎</span>
+      现场
+    </a>
+    <a class="tab-link" href="settings.html">
+      <span class="tab-icon" aria-hidden="true">◆</span>
+      设置
+    </a>
+  </nav>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>

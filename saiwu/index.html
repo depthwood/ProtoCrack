@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0f1a" id="meta-theme-color" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("saiwu-theme");
+        if (t === "light" || t === "dark") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="description" content="体育赛事现场运营工作台" />
+  <title>赛务通 · 工作台</title>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body>
+  <header class="app-header">
+    <a class="app-brand" href="index.html">
+      <span class="app-brand-icon" aria-hidden="true">◈</span>
+      <span>赛务通</span>
+    </a>
+    <div class="app-header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换浅色/深色模式" title="外观">☀</button>
+      <span class="badge-live" id="clock-now" aria-live="polite">--:--:--</span>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">工作台</h1>
+    <p class="page-sub">
+      <span class="event-pill">进行中</span>
+      2026 春季田径公开赛 · 现场运营
+    </p>
+
+    <section class="card card--flush" aria-label="推介轮播">
+      <h2 class="card-title">赛事聚焦</h2>
+      <div class="carousel-wrap">
+        <div class="carousel" data-carousel role="region" aria-roledescription="轮播" aria-label="赛事图片轮播">
+          <div class="carousel-viewport">
+            <ul class="carousel-track">
+              <li class="carousel-slide"
+                style="background-image: linear-gradient(135deg, #0c4a6e 0%, #0369a1 42%, #0284c7 100%);">
+                <div class="carousel-slide-inner">
+                  <p class="carousel-kicker">Opening</p>
+                  <h3 class="carousel-title">2026 春季田径公开赛开幕</h3>
+                  <p class="carousel-desc">主体育场全天服务 · 赛程、检录与现场播报一站式联动</p>
+                </div>
+              </li>
+              <li class="carousel-slide"
+                style="background-image: linear-gradient(135deg, #7c2d12 0%, #c2410c 38%, #ea580c 100%);">
+                <div class="carousel-slide-inner">
+                  <p class="carousel-kicker">Check-in</p>
+                  <h3 class="carousel-title">检录请注意携带证件</h3>
+                  <p class="carousel-desc">请按组别提前 30 分钟到达检录口，配合号码布及身份核验</p>
+                </div>
+              </li>
+              <li class="carousel-slide"
+                style="background-image: linear-gradient(135deg, #14532d 0%, #166534 40%, #22c55e 100%);">
+                <div class="carousel-slide-inner">
+                  <p class="carousel-kicker">Safety</p>
+                  <h3 class="carousel-title">热身区与投掷区安全提示</h3>
+                  <p class="carousel-desc">服从志愿者引导 · 投掷项目观众勿越线 · 遇雨天注意防滑</p>
+                </div>
+              </li>
+            </ul>
+            <button type="button" class="carousel-nav carousel-prev" aria-label="上一张">‹</button>
+            <button type="button" class="carousel-nav carousel-next" aria-label="下一张">›</button>
+          </div>
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">赛事公告</h2>
+      <ul class="announce-list">
+        <li class="announce-item announce-item--important">
+          <time class="announce-date" datetime="2026-05-12">05-12</time>
+          <div>
+            <strong>重要 · 午后雷雨预案生效</strong>
+            <p>若雷暴黄色预警发布，径赛将暂停 30 分钟；请各队领队关注 APP 与现场大屏。</p>
+          </div>
+        </li>
+        <li class="announce-item">
+          <time class="announce-date" datetime="2026-05-11">05-11</time>
+          <div>
+            <strong>场地变更 · 跳远资格赛</strong>
+            <p>沙坑维护已完成，明日场次仍在北侧助跑道进行，热身改至副场 3 道。</p>
+          </div>
+        </li>
+        <li class="announce-item">
+          <time class="announce-date" datetime="2026-05-10">05-10</time>
+          <div>
+            <strong>医疗服务</strong>
+            <p>西南出口医务站全天开放；急救电话见赛事手册末页。</p>
+          </div>
+        </li>
+      </ul>
+      <a class="announce-more" href="announcements.html">全部公告</a>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">今日概况</h2>
+      <div class="stat-row">
+        <div class="stat">
+          <b>18</b>
+          <span>场次</span>
+        </div>
+        <div class="stat">
+          <b>7</b>
+          <span>进行中</span>
+        </div>
+        <div class="stat">
+          <b>412</b>
+          <span>已检录</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">快捷入口</h2>
+      <div class="grid-quick">
+        <a class="quick-link" href="schedule.html">
+          <span aria-hidden="true">📅</span>
+          <strong>赛程场地</strong>
+          <small>场次与跑道分配</small>
+        </a>
+        <a class="quick-link" href="participants.html">
+          <span aria-hidden="true">👥</span>
+          <strong>人员队伍</strong>
+          <small>名单与段位</small>
+        </a>
+        <a class="quick-link" href="checkin.html">
+          <span aria-hidden="true">✓</span>
+          <strong>检录签到</strong>
+          <small>扫码与人工确认</small>
+        </a>
+        <a class="quick-link" href="live.html">
+          <span aria-hidden="true">▶</span>
+          <strong>现场控制</strong>
+          <small>计时与播报</small>
+        </a>
+        <a class="quick-link" href="settings.html">
+          <span aria-hidden="true">⚙</span>
+          <strong>赛事设置</strong>
+          <small>规则与公告模板</small>
+        </a>
+        <a class="quick-link" href="schedule.html#next">
+          <span aria-hidden="true">⏭</span>
+          <strong>下一场</strong>
+          <small>男子 100m 预赛 3 组</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">待办提醒</h2>
+      <ul class="list">
+        <li class="list-item">
+          <div>
+            <strong>场检 · 主体育场</strong>
+            <div class="list-meta">14:20 · 跳远沙坑复查</div>
+          </div>
+          <span class="tag tag-pending">待办</span>
+        </li>
+        <li class="list-item">
+          <div>
+            <strong>医务待命</strong>
+            <div class="list-meta">全天 · 西南出口</div>
+          </div>
+          <span class="tag tag-ongoing">进行中</span>
+        </li>
+        <li class="list-item">
+          <div>
+            <strong>颁奖彩排</strong>
+            <div class="list-meta">17:00 · 礼仪动线</div>
+          </div>
+          <span class="tag tag-pending">待办</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <nav class="app-tabbar" aria-label="主导航">
+    <a class="tab-link" href="index.html" aria-current="page">
+      <span class="tab-icon" aria-hidden="true">⌂</span>
+      首页
+    </a>
+    <a class="tab-link" href="schedule.html">
+      <span class="tab-icon" aria-hidden="true">▤</span>
+      赛程
+    </a>
+    <a class="tab-link" href="checkin.html">
+      <span class="tab-icon" aria-hidden="true">☑</span>
+      检录
+    </a>
+    <a class="tab-link" href="live.html">
+      <span class="tab-icon" aria-hidden="true">◎</span>
+      现场
+    </a>
+    <a class="tab-link" href="settings.html">
+      <span class="tab-icon" aria-hidden="true">◆</span>
+      设置
+    </a>
+  </nav>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>

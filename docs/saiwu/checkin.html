@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0f1a" id="meta-theme-color" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("saiwu-theme");
+        if (t === "light" || t === "dark") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <title>检录签到 · 赛务通</title>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body>
+  <header class="app-header">
+    <a class="app-brand" href="index.html">
+      <span class="app-brand-icon" aria-hidden="true">◈</span>
+      <span>赛务通</span>
+    </a>
+    <div class="app-header-actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换浅色/深色模式" title="外观">☀</button>
+      <span class="badge-live" id="clock-now" aria-live="polite">--:--:--</span>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">检录签到</h1>
+    <p class="page-sub">当前场次：男子 100m 预赛 · 第 3 组</p>
+
+    <section class="card">
+      <h2 class="card-title">扫码区</h2>
+      <div class="scan-zone" role="img" aria-label="摄像头扫码区域占位">
+        <span>摄像头预览占位<br /><small>实装时可接入 WebRTC / 原生扫码</small></span>
+      </div>
+      <div class="row-actions">
+        <button type="button" class="btn btn-primary btn-block">模拟：扫到号码布</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">手工补录</h2>
+      <div class="form-group">
+        <label for="bib">号码</label>
+        <input id="bib" type="text" inputmode="numeric" placeholder="例如 22" />
+      </div>
+      <div class="form-group">
+        <label for="lane">道次</label>
+        <select id="lane" name="lane">
+          <option value="">请选择</option>
+          <option>1 道</option>
+          <option>2 道</option>
+          <option>3 道</option>
+          <option>4 道</option>
+          <option>5 道</option>
+          <option>6 道</option>
+          <option>7 道</option>
+          <option>8 道</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-ghost btn-block">确认检录</button>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">最近检录</h2>
+      <ul class="list">
+        <li class="list-item">
+          <div>
+            <strong>15 号 · 王某某</strong>
+            <div class="list-meta">14:31:06 · 人工确认</div>
+          </div>
+          <span class="tag tag-done">成功</span>
+        </li>
+        <li class="list-item">
+          <div>
+            <strong>08 号 · 张某某</strong>
+            <div class="list-meta">14:30:41 · 扫码</div>
+          </div>
+          <span class="tag tag-done">成功</span>
+        </li>
+      </ul>
+    </section>
+
+    <p class="empty-hint">与 <a href="participants.html">人员队伍</a>、<a href="schedule.html">赛程</a> 联动后可展示实时名单状态</p>
+  </main>
+
+  <nav class="app-tabbar" aria-label="主导航">
+    <a class="tab-link" href="index.html">
+      <span class="tab-icon" aria-hidden="true">⌂</span>
+      首页
+    </a>
+    <a class="tab-link" href="schedule.html">
+      <span class="tab-icon" aria-hidden="true">▤</span>
+      赛程
+    </a>
+    <a class="tab-link" href="checkin.html" aria-current="page">
+      <span class="tab-icon" aria-hidden="true">☑</span>
+      检录
+    </a>
+    <a class="tab-link" href="live.html">
+      <span class="tab-icon" aria-hidden="true">◎</span>
+      现场
+    </a>
+    <a class="tab-link" href="settings.html">
+      <span class="tab-icon" aria-hidden="true">◆</span>
+      设置
+    </a>
+  </nav>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>
