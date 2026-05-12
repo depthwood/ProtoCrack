@@ -343,6 +343,15 @@ html[data-theme="light"] .btn-primary {
   margin-bottom: 8px;
 }
 
+.card-kicker {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
 .role-row {
   display: flex;
   gap: 8px;
@@ -395,14 +404,17 @@ html[data-theme="light"] .btn-primary {
 }
 
 .stack-list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   padding: 10px 12px;
   background: var(--bg-elevated);
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.stack-list li > span:first-of-type {
+  font-weight: 650;
+  color: var(--text-primary);
 }
 
 .stack-list code {

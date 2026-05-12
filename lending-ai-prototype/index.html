@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="智借 — 更清晰、更少来回的借贷服务体验原型" />
+  <title>智借 · 借贷服务原型</title>
+  <script>
+    (function () {
+      try {
+        var KEY = "lending-ai-theme";
+        var saved = localStorage.getItem(KEY);
+        var dark =
+          saved === "dark" ||
+          (saved !== "light" &&
+            typeof matchMedia !== "undefined" &&
+            matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.setAttribute("data-appearance", dark ? "dark" : "light");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.setAttribute("data-theme", saved);
+        }
+      } catch (e) {
+        /* 忽略受限环境 */
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header" role="banner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div class="brand-text">
+          <span class="brand-name">智借</span>
+          <span class="brand-tag">借得明白 · 心里有数</span>
+        </div>
+      </div>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+      </button>
+    </header>
+
+    <main role="main">
+      <section id="panel-home" class="panel is-active" aria-labelledby="home-heading">
+        <div class="hero">
+          <h1 id="home-heading">少猜、少跑、早点知道结果</h1>
+          <p>把散落在表格、电话和话术里的规矩，翻译成你能跟着做的几步：需要准备什么、现在卡在哪、大概还要等多久。后台怎么协同、模型怎么参谋，你不用操心细节。</p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary">测一测预审条件</button>
+            <button type="button" class="btn btn-secondary">看看借款全流程</button>
+          </div>
+        </div>
+
+        <h2 class="section-title">这些场景，产品上怎么接住</h2>
+        <div class="card-grid">
+          <article class="card">
+            <p class="card-kicker">材料总对不上</p>
+            <h3>用追问把清单说清楚</h3>
+            <p>不让用户对着空白表单猜。会根据你的职业、城市和申请类型追问几句，自动生成「还差哪几项」并可一键拍照上传补件，避免反复邮寄、反复补扫。</p>
+          </article>
+          <article class="card">
+            <p class="card-kicker">心里一直悬着</p>
+            <h3>预审结论尽早可见</h3>
+            <p>在正式尽调前给一个「有希望 / 暂不建议」的区间说明（含可读原因），并标出可改善项。不是替最终审批下结论，而是减少「提交了才发现白忙」的体验。</p>
+          </article>
+          <article class="card">
+            <p class="card-kicker">进度像在黑盒里</p>
+            <h3>把阶段翻成白话</h3>
+            <p>每个节点用简短人话告诉你「系统在做什么」「你还需要做什么」，预计等待区间可配置透明度规则，避免只看到冷冰冰的状态码。</p>
+          </article>
+          <article class="card">
+            <p class="card-kicker">半夜有疑问</p>
+            <h3>先对话，再升级到真人</h3>
+            <p>常见计费、征信、放款时间等问题由助手先做合规口径内的解释；牵涉个案判断或敏感操作时，顺滑转接人工并带上上下文，少重复自述。</p>
+          </article>
+        </div>
+
+        <div class="metrics" aria-label="体验目标示意（虚构演示数据）">
+          <div class="metric">
+            <strong>约 60%</strong>
+            <span>材料一次齐套率（目标）</span>
+          </div>
+          <div class="metric">
+            <strong>&lt; 3 分钟</strong>
+            <span>预审反馈首屏耗时（目标）</span>
+          </div>
+          <div class="metric">
+            <strong>−40%</strong>
+            <span>进线重复问询（目标）</span>
+          </div>
+        </div>
+
+        <p class="page-footnote">本页为可交互低保真原型：指标为示意，不代表真实业绩承诺。</p>
+      </section>
+
+      <section id="panel-ai" class="panel" aria-labelledby="ai-heading" hidden>
+        <h2 class="section-title" id="ai-heading">和助手先说两句</h2>
+        <div class="chat-preview" role="region" aria-label="对话预览">
+          <div class="chat-bar">只读预览 · 实际产品需结合当地监管与话术审核</div>
+          <div class="bubble">我暂时没有公积金缴存记录，分期还能过吗？被拒的话会先影响征信吗？</div>
+          <div class="bubble ai">
+            预审会综合收入稳定性、负债和用途等多维信息，不是所有产品都把公积金当作唯一门槛。被拒是否上报征信要看具体产品与查询类型——我把与你情况最接近的两条规则和后续可选动作写在下面，你愿意的话我可以顺带帮你勾选需要上传的资料。
+          </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 20px">助手在你手机里做的，是这些事</h2>
+        <ul class="stack-list">
+          <li><span>听懂口语化问题</span>，把政策条目「翻译」成步骤和条件，而不是甩链接。</li>
+          <li><span>记住对话上下文</span>，补齐材料时能接着上次问，不乱跳步骤。</li>
+          <li><span>卡住时给出下一步</span>：该补哪种证明、要找谁开个证明、预约哪个网点更省时间。</li>
+          <li><span>该让人工出场时退让</span>：涉及授信额度、豁免或争议，自动带出工单编号与摘要。</li>
+        </ul>
+      </section>
+
+      <section id="panel-flow" class="panel" aria-labelledby="flow-heading" hidden>
+        <h2 class="section-title" id="flow-heading">你从申请到入账，会看到什么</h2>
+        <div class="card-grid">
+          <article class="card">
+            <p class="card-kicker">Step 01</p>
+            <h3>身份与用途确认</h3>
+            <p>活体 + 证件校验后，勾选资金用途上限；系统在后台同步触发合规校验，你只关心是否通过与小提示文案。</p>
+          </article>
+          <article class="card">
+            <p class="card-kicker">Step 02</p>
+            <h3>材料一次列清</h3>
+            <p>问答或扫描驱动清单；缺件只提醒「这一种」，支持预约网点或电子渠道回传，减少「全退重来」。</p>
+          </article>
+          <article class="card">
+            <p class="card-kicker">Step 03</p>
+            <h3>审核中的「等一下」说明</h3>
+            <p>展示当前队列与预计区间（可按机构策略隐藏敏感细节）；有异常会从「待定」转成可理解的行动项。</p>
+          </article>
+          <article class="card">
+            <p class="card-kicker">Step 04</p>
+            <h3>结果、合同与放款</h3>
+            <p>通过则用要点摘要讲清利率档位、还款日与提前结清入口；拒绝给可复议路径与可改善项（若业务允许）。</p>
+          </article>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 18px">背后谁在配合（你看名字就好）</h2>
+        <div class="card">
+          <h3>你只需对接一个入口</h3>
+          <p>客户经理、风控和客服在同一条工单时间线上留言，系统自动把「你只需要知道的部分」推到 App 首页与消息里——避免同一问题换人多讲一遍。</p>
+          <div class="role-row" aria-label="协同角色示意">
+            <span class="chip">客户经理</span>
+            <span class="chip">信审</span>
+            <span class="chip">合规</span>
+            <span class="chip">客服</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="panel-me" class="panel" aria-labelledby="me-heading" hidden>
+        <div class="card">
+          <h3 style="margin-bottom: 4px">陈文佳</h3>
+          <p style="margin-bottom: 12px"><span style="font-size: 0.82rem; color: var(--text-muted)">尾号 ···8962 · 已通过实名</span></p>
+          <div class="role-row">
+            <span class="chip">消息 · 2 条未读</span>
+            <span class="chip">授信 · 预审中</span>
+          </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 18px">常用入口</h2>
+        <ul class="stack-list">
+          <li><span>还款与账单</span>（示意）</li>
+          <li><span>合同与费率说明</span>（示意）</li>
+          <li><span>借款进度</span>（示意）</li>
+          <li><span>在线客服 · 工单</span>（示意）</li>
+        </ul>
+
+        <h2 class="section-title" style="margin-top: 18px">偏好与安全</h2>
+        <div class="card">
+          <p>明暗主题可在右上角随时切换（亦支持跟随系统）。下方可继续扩展手势锁、账单推送频率等——保持与产品主流程同一套设计语言即可。</p>
+        </div>
+
+        <p class="page-footnote">人物与授信状态纯属原型虚构；明暗主题与 Tab 仅为交互占位。</p>
+      </section>
+    </main>
+
+    <nav class="bottom-tabs" role="navigation" aria-label="主导航">
+      <button type="button" class="tab-btn is-active" data-panel="home" aria-selected="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z" />
+        </svg>
+        首页
+      </button>
+      <button type="button" class="tab-btn" data-panel="ai" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 3c4.97 0 9 3.58 9 8 0 2.5-2 5-5 7v3H8v-3c-3-2-5-4.5-5-7 0-4.42 4.03-8 9-8z" />
+          <path d="M9 21h6" />
+        </svg>
+        AI
+      </button>
+      <button type="button" class="tab-btn" data-panel="flow" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
+        </svg>
+        流程
+      </button>
+      <button type="button" class="tab-btn" data-panel="me" aria-selected="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 21c2-5 14-5 16 0" />
+        </svg>
+        我的
+      </button>
+    </nav>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
