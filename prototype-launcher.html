@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>原型浏览器入口 · UI 合集</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f7f9;
+      --card: #fff;
+      --text: #1a1a1a;
+      --muted: #5c6370;
+      --accent: #2563eb;
+      --border: rgba(0, 0, 0, 0.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121418;
+        --card: #1c1f26;
+        --text: #eceef2;
+        --muted: #9aa3b2;
+        --accent: #60a5fa;
+        --border: rgba(255, 255, 255, 0.08);
+      }
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 2rem clamp(1rem, 4vw, 2.5rem);
+      max-width: 40rem;
+      margin-inline: auto;
+    }
+    h1 {
+      font-size: 1.35rem;
+      font-weight: 650;
+      margin: 0 0 0.35rem;
+    }
+    .hint {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0 0 1.25rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    li {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0;
+    }
+    a.row {
+      display: block;
+      padding: 0.85rem 1rem;
+      color: inherit;
+      text-decoration: none;
+      border-radius: inherit;
+    }
+    a.row:hover {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+    .name {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+    footer {
+      margin-top: 1.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var key = (params.get("goto") || "").trim().toLowerCase();
+      var routes = {
+        saiwu: "saiwu/index.html",
+        yiliao: "yiliao/index.html",
+        "web3-otc": "web3-otc-prototype/index.html",
+        lending: "lending-ai-prototype/index.html",
+      };
+      var target = routes[key];
+      if (target) {
+        window.location.replace(target);
+      }
+    })();
+  </script>
+</head>
+<body>
+  <h1>原型浏览器入口</h1>
+  <p class="hint">
+    在<strong>系统浏览器</strong>中打开本页后，点击下方链接会在<strong>同一浏览器</strong>中进入对应项目的 <code>index.html</code>。
+    若 README 在 IDE 内预览，请改用浏览器打开本文件（或先在仓库根执行 <code>npx --yes serve .</code> 再访问本页）。
+  </p>
+  <ul>
+    <li>
+      <a class="row" href="saiwu/index.html" target="_blank" rel="noopener noreferrer">
+        <div class="name">赛务通</div>
+        <div class="desc">体育赛事现场运营原型</div>
+      </a>
+    </li>
+    <li>
+      <a class="row" href="yiliao/index.html" target="_blank" rel="noopener noreferrer">
+        <div class="name">医路伴行</div>
+        <div class="desc">医疗场景 · 患者端 / 科室端</div>
+      </a>
+    </li>
+    <li>
+      <a class="row" href="web3-otc-prototype/index.html" target="_blank" rel="noopener noreferrer">
+        <div class="name">NX OTC（Web3）</div>
+        <div class="desc">OTC 流程 · IndexedDB</div>
+      </a>
+    </li>
+    <li>
+      <a class="row" href="lending-ai-prototype/index.html" target="_blank" rel="noopener noreferrer">
+        <div class="name">智借</div>
+        <div class="desc">借贷服务体验原型</div>
+      </a>
+    </li>
+  </ul>
+  <footer>
+    直达参数示例：<code>?goto=saiwu</code>、<code>?goto=yiliao</code>、<code>?goto=web3-otc</code>、<code>?goto=lending</code>
+  </footer>
+</body>
+</html>
