@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#e8eef2" id="meta-theme-color" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("yiliao-theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        else document.documentElement.setAttribute("data-theme", "light");
+        var e = localStorage.getItem("yiliao-elderly");
+        if (e === "1") document.documentElement.setAttribute("data-elderly", "true");
+        else if (!document.documentElement.getAttribute("data-elderly"))
+          document.documentElement.setAttribute("data-elderly", "false");
+      } catch (err) {}
+    })();
+  </script>
+  <title>医路伴行 · 设置</title>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-brand" href="index.html">
+      <span class="app-brand-icon" aria-hidden="true">✚</span>
+      <span class="app-brand-name">医路伴行</span>
+    </a>
+    <div class="app-header-actions">
+      <a class="header-link" href="dept.html">科室</a>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换浅色/深色模式" title="外观">☾</button>
+      <span class="badge-soft" id="clock-now" aria-live="polite">--:--</span>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">我的</h1>
+    <p class="page-sub">显示与辅助 · 演示</p>
+
+    <section class="card settings-group">
+      <h2 class="card-title">长辈模式</h2>
+      <label>
+        <span>更大字号与按钮</span>
+        <span class="switch">
+          <input type="checkbox" id="elderly-switch" />
+          <span class="switch-slider" aria-hidden="true"></span>
+        </span>
+      </label>
+      <p class="settings-hint">打开后正文与主要按钮会放大，便于院内阅读与点击。</p>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">帮助与联系</h2>
+      <ul class="list">
+        <li class="list-item">
+          <div>
+            <strong>导诊台</strong>
+            <div class="list-meta">内线 6110（演示）</div>
+            <button type="button" class="btn-ghost" style="margin-top:10px;" data-toast-msg="（演示）已记录：将为您转接导诊内线 6110">
+              联系导诊
+            </button>
+          </div>
+        </li>
+        <li class="list-item">
+          <div>
+            <strong>隐私说明</strong>
+            <div class="list-meta">不向第三方出售个人健康数据（产品文案占位）</div>
+            <button type="button" class="btn-ghost" style="margin-top:10px;" data-toast-msg="（演示）隐私政策全文链接尚未接入">
+              查看摘要
+            </button>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <nav class="app-tabbar" id="nav-patient" aria-label="患者端主导航">
+    <a class="tab-link" href="index.html">
+      <span class="tab-icon" aria-hidden="true">⌂</span>
+      首页
+    </a>
+    <a class="tab-link" href="journey.html">
+      <span class="tab-icon" aria-hidden="true">≡</span>
+      行程
+    </a>
+    <a class="tab-link" href="reports.html">
+      <span class="tab-icon" aria-hidden="true">▤</span>
+      报告
+    </a>
+    <a class="tab-link" href="settings.html" aria-current="page">
+      <span class="tab-icon" aria-hidden="true">◆</span>
+      我的
+    </a>
+  </nav>
+
+  <nav class="app-tabbar" id="nav-dept" aria-label="科室端导航" hidden>
+    <a class="tab-link" href="dept.html">
+      <span class="tab-icon" aria-hidden="true">▣</span>
+      工作台
+    </a>
+    <a class="tab-link" href="dept-patient.html">
+      <span class="tab-icon" aria-hidden="true">👤</span>
+      患者详情
+    </a>
+    <a class="tab-link" href="settings.html?role=dept" aria-current="page">
+      <span class="tab-icon" aria-hidden="true">◆</span>
+      设置
+    </a>
+  </nav>
+
+  <script>
+    (function () {
+      try {
+        var dept = new URLSearchParams(location.search).get("role") === "dept";
+        var np = document.getElementById("nav-patient");
+        var nd = document.getElementById("nav-dept");
+        if (dept && np && nd) {
+          np.hidden = true;
+          nd.hidden = false;
+          var brand = document.querySelector(".app-brand");
+          if (brand) {
+            brand.setAttribute("href", "dept.html");
+            var nameEl = brand.querySelector(".app-brand-name");
+            if (nameEl) nameEl.textContent = "科室设置";
+            var iconEl = brand.querySelector(".app-brand-icon");
+            if (iconEl) iconEl.textContent = "⚕";
+          }
+          var hdr = document.querySelector('.header-link[href="dept.html"]');
+          if (hdr) {
+            hdr.setAttribute("href", "index.html");
+            hdr.textContent = "患者端";
+          }
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

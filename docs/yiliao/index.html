@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#e8eef2" id="meta-theme-color" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("yiliao-theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        else document.documentElement.setAttribute("data-theme", "light");
+        var e = localStorage.getItem("yiliao-elderly");
+        if (e === "1") document.documentElement.setAttribute("data-elderly", "true");
+        else if (!document.documentElement.getAttribute("data-elderly"))
+          document.documentElement.setAttribute("data-elderly", "false");
+      } catch (err) {}
+    })();
+  </script>
+  <meta name="description" content="患者端首页 · 就诊引导与任务" />
+  <title>医路伴行 · 首页</title>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-brand" href="index.html">
+      <span class="app-brand-icon" aria-hidden="true">✚</span>
+      <span>医路伴行</span>
+    </a>
+    <div class="app-header-actions">
+      <a class="header-link" href="dept.html">科室</a>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换浅色/深色模式" title="外观">☾</button>
+      <span class="badge-soft" id="clock-now" aria-live="polite">--:--</span>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">您好，演示患者</h1>
+    <p class="page-sub"><span class="badge-soft">今日就诊</span> 内科门诊 · 已签到</p>
+
+    <section class="hero-next" aria-label="下一步行动">
+      <p class="hero-next-kicker">下一步</p>
+      <p class="hero-next-title">请到 <strong>3 楼内科候诊区</strong> 等候叫号</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="queue.html">查看排队进度</a>
+        <a class="btn-ghost" href="journey.html">完整行程</a>
+      </div>
+    </section>
+
+    <section class="card" aria-label="今日流程">
+      <h2 class="card-title">今日流程</h2>
+      <ol class="flow-steps">
+        <li class="flow-step flow-step--done">
+          <span class="flow-step-num" aria-hidden="true">✓</span>
+          <div class="flow-step-body">
+            <strong>签到分诊</strong>
+            <span>一楼大厅 · 已完成 08:42</span>
+          </div>
+        </li>
+        <li class="flow-step flow-step--current">
+          <span class="flow-step-num">2</span>
+          <div class="flow-step-body">
+            <strong>候诊</strong>
+            <span>前方约 4 人 · 预计 20 分钟内 · <a href="queue.html">排队详情</a></span>
+          </div>
+        </li>
+        <li class="flow-step">
+          <span class="flow-step-num">3</span>
+          <div class="flow-step-body">
+            <strong>检验检查</strong>
+            <span>血常规 · 已预约 10:30 · <a href="journey.html">查看行程</a></span>
+          </div>
+        </li>
+        <li class="flow-step">
+          <span class="flow-step-num">4</span>
+          <div class="flow-step-body">
+            <strong>取药 / 复诊</strong>
+            <span>以医生安排为准 · <a href="reports.html">报告与摘要</a></span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">快捷入口</h2>
+      <div class="grid-quick">
+        <a class="quick-link" href="reports.html">
+          <span aria-hidden="true">📋</span>
+          <strong>报告</strong>
+          <small>检验与影像摘要</small>
+        </a>
+        <a class="quick-link" href="ai-assist.html">
+          <span aria-hidden="true">💬</span>
+          <strong>智能助理</strong>
+          <small>流程解读 · 非诊断</small>
+        </a>
+        <a class="quick-link" href="journey.html">
+          <span aria-hidden="true">📍</span>
+          <strong>院内导航</strong>
+          <small>科室位置示意</small>
+        </a>
+        <a class="quick-link" href="settings.html">
+          <span aria-hidden="true">👤</span>
+          <strong>我的</strong>
+          <small>长辈模式与帮助</small>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <nav class="app-tabbar" aria-label="患者端主导航">
+    <a class="tab-link" href="index.html" aria-current="page">
+      <span class="tab-icon" aria-hidden="true">⌂</span>
+      首页
+    </a>
+    <a class="tab-link" href="journey.html">
+      <span class="tab-icon" aria-hidden="true">≡</span>
+      行程
+    </a>
+    <a class="tab-link" href="reports.html">
+      <span class="tab-icon" aria-hidden="true">▤</span>
+      报告
+    </a>
+    <a class="tab-link" href="settings.html">
+      <span class="tab-icon" aria-hidden="true">◆</span>
+      我的
+    </a>
+  </nav>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

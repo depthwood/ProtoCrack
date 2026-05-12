@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#e8eef2" id="meta-theme-color" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("yiliao-theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        else document.documentElement.setAttribute("data-theme", "light");
+        var e = localStorage.getItem("yiliao-elderly");
+        if (e === "1") document.documentElement.setAttribute("data-elderly", "true");
+        else if (!document.documentElement.getAttribute("data-elderly"))
+          document.documentElement.setAttribute("data-elderly", "false");
+      } catch (err) {}
+    })();
+  </script>
+  <title>医路伴行 · 患者详情</title>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-brand" href="dept.html">
+      <span class="app-brand-icon" aria-hidden="true">⚕</span>
+      <span>患者详情</span>
+    </a>
+    <div class="app-header-actions">
+      <a class="header-link" href="index.html">患者端</a>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换浅色/深色模式" title="外观">☾</button>
+      <span class="badge-soft" id="clock-now" aria-live="polite">--:--</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="back-bar">
+      <a href="dept.html">← 返回工作台</a>
+    </div>
+    <h1 class="page-title">张演示</h1>
+    <p class="page-sub">男 · 62 岁 · 内科 · 演示病历</p>
+
+    <section class="card">
+      <h2 class="card-title">AI 摘要（演示）</h2>
+      <div class="ai-banner" role="note">
+        由病历与检验自动生成，<strong>请医生审核后采用</strong>；不能作为法律依据或独立诊断依据。
+      </div>
+      <p style="margin:0;line-height:1.65;">
+        主诉乏力 2 周；既往高血压长期服药。本次血常规示血小板略低，建议结合体征与其他检验复核；请关注患者主诉与活动耐量变化。
+      </p>
+      <p style="margin:14px 0 0;">
+        <a class="btn-ghost" href="dept-action.html?type=draft">插入病程草稿</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">就诊时间轴</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-time">今日 08:42</div>
+          <strong>分诊签到</strong>
+          <p class="list-meta">内科门诊</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">今日 09:10</div>
+          <strong>首诊 · 病史采集</strong>
+          <p class="list-meta">乏力、睡眠差；BP 138/86 mmHg（演示）</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">今日 09:25</div>
+          <strong>开立检验</strong>
+          <p class="list-meta">血常规、肝功能</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">快捷操作（示意）</h2>
+      <div class="hero-actions">
+        <a class="btn-primary" href="dept-action.html?type=order">开立医嘱</a>
+        <a class="btn-ghost" href="dept-action.html?type=handoff">护理交接</a>
+      </div>
+    </section>
+  </main>
+
+  <nav class="app-tabbar" aria-label="科室端导航">
+    <a class="tab-link" href="dept.html">
+      <span class="tab-icon" aria-hidden="true">▣</span>
+      工作台
+    </a>
+    <a class="tab-link" href="dept-patient.html" aria-current="page">
+      <span class="tab-icon" aria-hidden="true">👤</span>
+      患者详情
+    </a>
+    <a class="tab-link" href="settings.html?role=dept">
+      <span class="tab-icon" aria-hidden="true">◆</span>
+      设置
+    </a>
+  </nav>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

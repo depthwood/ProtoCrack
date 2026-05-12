@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#e8eef2" id="meta-theme-color" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("yiliao-theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        else document.documentElement.setAttribute("data-theme", "light");
+        var e = localStorage.getItem("yiliao-elderly");
+        if (e === "1") document.documentElement.setAttribute("data-elderly", "true");
+        else if (!document.documentElement.getAttribute("data-elderly"))
+          document.documentElement.setAttribute("data-elderly", "false");
+      } catch (err) {}
+    })();
+  </script>
+  <title>医路伴行 · 行程</title>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <header class="app-header">
+    <a class="app-brand" href="index.html">
+      <span class="app-brand-icon" aria-hidden="true">✚</span>
+      <span>医路伴行</span>
+    </a>
+    <div class="app-header-actions">
+      <a class="header-link" href="dept.html">科室</a>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换浅色/深色模式" title="外观">☾</button>
+      <span class="badge-soft" id="clock-now" aria-live="polite">--:--</span>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">今日行程</h1>
+    <p class="page-sub">按时间排列 · 点击「排队」可看候诊队列</p>
+
+    <section class="card">
+      <h2 class="card-title">时间线</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-time">08:30 · 到院</div>
+          <strong>门诊楼东门入院</strong>
+          <p class="list-meta">地下车库车位已满时可停西侧临时区</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">08:42 · 签到</div>
+          <strong>内科分诊台</strong>
+          <p class="list-meta"><a href="queue.html">查看候诊排队 →</a></p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">10:30 · 检验</div>
+          <strong>2 楼检验科 · 抽血</strong>
+          <p class="list-meta">空腹项目请按护士告知执行</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">待定</div>
+          <strong>回诊或取药</strong>
+          <p class="list-meta">以当班医生说明为准</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">院内位置（示意）</h2>
+      <ul class="list">
+        <li class="list-item">
+          <div>
+            <strong>内科门诊</strong>
+            <div class="list-meta">3 楼东侧 A 区</div>
+          </div>
+        </li>
+        <li class="list-item">
+          <div>
+            <strong>检验科</strong>
+            <div class="list-meta">2 楼连廊中段</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <nav class="app-tabbar" aria-label="患者端主导航">
+    <a class="tab-link" href="index.html">
+      <span class="tab-icon" aria-hidden="true">⌂</span>
+      首页
+    </a>
+    <a class="tab-link" href="journey.html" aria-current="page">
+      <span class="tab-icon" aria-hidden="true">≡</span>
+      行程
+    </a>
+    <a class="tab-link" href="reports.html">
+      <span class="tab-icon" aria-hidden="true">▤</span>
+      报告
+    </a>
+    <a class="tab-link" href="settings.html">
+      <span class="tab-icon" aria-hidden="true">◆</span>
+      我的
+    </a>
+  </nav>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
